@@ -15,6 +15,11 @@ function ig() {
   document.getElementById("home").style.display = "none";
   document.getElementById("socialDialog").classList.add("hidden"); // Hide the modal
 }
+function fb() {
+  document.getElementById("fbp").style.display = "block";
+  document.getElementById("home").style.display = "none";
+  document.getElementById("socialDialog").classList.add("hidden"); // Hide the modal
+}
 function tok() {
   document.getElementById("tokp").style.display = "block";
   document.getElementById("home").style.display = "none";

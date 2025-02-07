@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/favicon.png" type="image/x-icon">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="js/index.js"></script>
+  <title>Passion Pro Reality Show</title>
+  <style>
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      display: none;
+      z-index: 10;
+      /* Lower z-index */
+    }
+
+    .popup img {
+      border-radius: 50%;
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+
+    #socialDialog {
+      z-index: 20;
+      position: relative;
+      /* Lower z-index */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="popup" class="popup">
+    <img id="profile-pic" src="" alt="Profile Picture">
+    <span id="popup-text"></span>
+  </div>
+
+  <div id="home">
+    <header class="bg-gray-100 py-4">
+      <div class="container mx-auto text-center">
+        <img src="img/slide.png" alt="Slide Image" class="mx-auto mb-4">
+        <button id="vote2" onclick="vote()"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Click Here To Vote
+        </button>
+      </div>
+    </header>
+
+    <div id="socialDialog" onclick="vote()"
+      class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden z-20">
+      <!-- Modal Content -->
+      <div class="bg-white rounded-lg shadow-xl w-96 p-6" onclick="event.stopPropagation()">
+        <div class="flex justify-between items-center">
+          <button onclick="closeDialog()" class="text-gray-600 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Content Section -->
+        <div class="mt-6 text-center">
+          <p class="text-gray-600 text-sm">Select social media account you would like to use:</p>
+          <div class="mt-4 flex justify-center space-x-8">
+            <img class="cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out transform w-12 h-12"
+              src="https://cdn.icon-icons.com/icons2/836/PNG/512/Twitter_icon-icons.com_66803.png" alt="Twitter"
+              onclick="tw(); hidePopup(); can();">
+            <img class="cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out transform w-12 h-12"
+              src="https://cdn.icon-icons.com/icons2/836/PNG/512/Instagram_icon-icons.com_66804.png" alt="Instagram"
+              onclick="ig(); hidePopup(); can();">
+            <img class="cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out transform w-12 h-12"
+              src="https://cdn.icon-icons.com/icons2/2389/PNG/512/tiktok_logo_icon_144802.png" alt="TikTok"
+              onclick="tok(); hidePopup(); can();">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function tok() {
+      // Add logic here
+      hidePopup();
+    }
+
+    function ig() {
+      // Add logic here
+      hidePopup();
+    }
+
+    function tw() {
+      // Add logic here
+      hidePopup();
+    }
+
+    function can() {
+      document.getElementById('socialDialog').classList.add('hidden');
+    }
+  </script>
+</body>
+
+</html>

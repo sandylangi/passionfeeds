@@ -1,12 +1,13 @@
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyCq5_Q1lBpBEoTJWkhUdF8IYJi_MIrYxQQ",
-  authDomain: "demurepass.firebaseapp.com",
-  databaseURL: "https://demurepass-default-rtdb.firebaseio.com",
-  projectId: "demurepass",
-  storageBucket: "demurepass.firebasestorage.app",
-  messagingSenderId: "660817531982",
-  appId: "1:660817531982:web:d7194cf9aeb86a7c9c1f1f",
+  apiKey: "AIzaSyAC3XQE2o9o22WSfGTl1tpbTcN0JyUyAkc",
+  authDomain: "arabasiafamousters.firebaseapp.com",
+  databaseURL: "https://arabasiafamousters-default-rtdb.firebaseio.com",
+  projectId: "arabasiafamousters",
+  storageBucket: "arabasiafamousters.firebasestorage.app",
+  messagingSenderId: "644937361493",
+  appId: "1:644937361493:web:66a67781e0a9e61c940cdc",
+  measurementId: "G-NQ1414E2YJ"
 };
 firebase.initializeApp(firebaseConfig);
 const appCheck = firebase.appCheck();
